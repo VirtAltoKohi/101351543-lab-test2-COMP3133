@@ -1,0 +1,20 @@
+<h1>SpaceX Mission Details</h1>
+<div *ngIf="mission">
+    <div class="item-place">
+        <div class="mission-patch-small">
+            <img *ngIf="mission.links && mission.links.mission_patch_small" [src]="mission.links.mission_patch_small" alt="{{ mission.mission_name }} Patch">
+        </div>
+        <div class="item-details">
+            <h2>{{ mission.mission_name }}</h2>
+            <p>Launch Year: {{ mission.launch_year }}</p>
+            <h2>Rocket Info</h2>
+            <p>Rocket name: {{ mission.rocket.rocket_name}}</p>
+            <h2>Launch Site</h2>
+            <p>Name : {{ mission.launch_site.site_name}}</p>
+        </div>
+    </div>
+    <div style="margin: auto; width: 70%;"> <!-- Center horizontally and set width -->
+        <h2>Launch Details</h2>
+        <p>{{ mission.details }}</p>
+    </div>
+</div>

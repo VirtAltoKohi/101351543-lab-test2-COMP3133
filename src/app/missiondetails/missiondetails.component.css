@@ -1,0 +1,24 @@
+.item-place {
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+  }
+  
+  .mission-patch-small {
+    margin: 8px;
+    width: 386px; /* Set the width to a fixed value */
+  }
+  
+  .mission-patch-small img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .item-details {
+    margin-left: 20px; /* Adjusted margin */
+  }
+  
+  .item-details h2 {
+    color: red; /* Adjusted h2 color */
+  }
+  

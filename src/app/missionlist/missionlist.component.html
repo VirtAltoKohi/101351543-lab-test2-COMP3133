@@ -1,0 +1,30 @@
+<!-- missionlist.component.html -->
+
+<div class="container">
+  <h1>SpaceX Launches</h1>
+  <div class="filter-container">
+    <form class="search-bar">
+      <label for="searchTerm">Search by mission name:</label>
+      <input type="text" id="searchTerm" name="searchTerm" [(ngModel)]="searchTerm">
+    </form>
+    <form class="filter-form">
+      <label for="yearFilter">Filter by Year:</label>
+      <input type="number" id="yearFilter" name="yearFilter" [(ngModel)]="yearFilter">
+      <button type="submit" (click)="applyYearFilter()">Apply Filter</button>
+      <button type="button" (click)="clearYearFilter()">Clear Filter</button>
+    </form>
+  </div>
+  <div class="mission-list">
+    <div *ngFor="let mission of filteredMissions" class="item-place">
+      <div class="mission-patch-small">
+        <img *ngIf="mission.links && mission.links.mission_patch_small" [src]="mission.links.mission_patch_small" alt="{{ mission.mission_name }} Patch">
+      </div>
+      <div class="item-details">
+        <h3>{{ mission.mission_name }}</h3>
+        <p>Launch Year: {{ mission.launch_year }}</p>
+        <p>Details: {{ mission.details }}</p>
+        <a [routerLink]="['/mission-details', mission.flight_number]">View Details</a>    
+      </div>
+    </div>
+  </div>
+</div>
